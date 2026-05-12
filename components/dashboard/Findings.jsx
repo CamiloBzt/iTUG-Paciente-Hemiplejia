@@ -16,11 +16,11 @@ export default function Findings() {
   return (
     <section style={{padding:'42px 56px 60px'}}>
       <div className="label">05 · Síntesis</div>
-      <h2 className="serif" style={{fontSize:34, margin:'10px 0 28px', fontWeight:400, letterSpacing:'-0.015em', maxWidth:760, lineHeight:1.15}}>
+      <h2 className="serif findings-title" style={{fontSize:34, margin:'10px 0 28px', fontWeight:400, letterSpacing:'-0.015em', maxWidth:760, lineHeight:1.15}}>
         Hallazgos clínicos y propuesta de tratamiento personalizado
       </h2>
 
-      <div style={{display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:16, marginBottom:36}}>
+      <div className="findings-grid" style={{display:'grid', gridTemplateColumns:'repeat(4, 1fr)', gap:16, marginBottom:36}}>
         {findings.map(f=>(
           <div key={f.num} style={{borderTop:`2px solid ${C.hemip}`, paddingTop:14}}>
             <div className="mono" style={{fontSize:11, color:C.hemip, fontWeight:500, marginBottom:6}}>{f.num}</div>
@@ -32,7 +32,7 @@ export default function Findings() {
 
       <div className="hairline" style={{paddingTop:24}}>
         <div className="label" style={{marginBottom:14}}>Programa propuesto · 3 fases</div>
-        <div style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:1, background:C.rule, border:`1px solid ${C.rule}`}}>
+        <div className="treatment-grid" style={{display:'grid', gridTemplateColumns:'repeat(3, 1fr)', gap:1, background:C.rule, border:`1px solid ${C.rule}`}}>
           {treatment.map(p=>(
             <div key={p.phase} style={{background:C.cream, padding:'18px 20px'}}>
               <div className="mono" style={{fontSize:10.5, color:C.muted, marginBottom:6, letterSpacing:'0.08em', textTransform:'uppercase'}}>{p.phase}</div>
@@ -50,7 +50,7 @@ export default function Findings() {
         </div>
       </div>
 
-      <div style={{marginTop:36, paddingTop:18, borderTop:`1px solid ${C.rule}`, display:'flex', justifyContent:'space-between', fontSize:11, color:C.muted}}>
+      <div className="footer-row" style={{marginTop:36, paddingTop:18, borderTop:`1px solid ${C.rule}`, display:'flex', justifyContent:'space-between', fontSize:11, color:C.muted}}>
         <span>iTUG Dashboard · prototipo de investigación</span>
         <span className="mono">Generado · {new Date().toLocaleDateString('es-CO')}</span>
       </div>

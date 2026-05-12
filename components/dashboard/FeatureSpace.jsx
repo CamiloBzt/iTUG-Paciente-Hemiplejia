@@ -33,7 +33,7 @@ export default function FeatureSpace() {
 
   return (
     <section style={{padding:'42px 56px 48px', borderBottom:`1px solid ${C.rule}`}}>
-      <div style={{display:'grid', gridTemplateColumns:'360px minmax(0, 1fr)', gap:34, alignItems:'stretch'}}>
+      <div className="feature-layout" style={{display:'grid', gridTemplateColumns:'360px minmax(0, 1fr)', gap:34, alignItems:'stretch'}}>
         <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
           <div>
             <div className="label">04 · Relación entre tiempo y giro</div>
@@ -47,7 +47,7 @@ export default function FeatureSpace() {
             </p>
           </div>
 
-          <div style={{display:'grid', gap:10, marginTop:20}}>
+          <div className="feature-summary" style={{display:'grid', gap:10, marginTop:20}}>
             <div style={{display:'flex', alignItems:'center', justifyContent:'space-between', padding:'10px 12px', border:`1px solid ${C.paperLine}`}}>
               <span className="small" style={{fontSize:12, color:C.ink2}}>Grupo de control</span>
               <span className="mono" style={{fontSize:12, color:C.healthy}}>Menos tiempo · más velocidad</span>
@@ -61,8 +61,8 @@ export default function FeatureSpace() {
             </p>
           </div>
         </div>
-        <div style={{height:430, minWidth:0}}>
-          <ResponsiveContainer width="100%" height="100%">
+        <div className="feature-chart" style={{height:430, minWidth:0}}>
+          <ResponsiveContainer width="100%" height="100%" minWidth={240} minHeight={320}>
             <ScatterChart margin={{top:18, right:28, bottom:56, left:62}}>
               <CartesianGrid stroke={C.paperLine} strokeDasharray="2 4"/>
               <XAxis type="number" dataKey="x" name="Duración total"

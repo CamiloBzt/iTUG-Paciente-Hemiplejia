@@ -30,7 +30,7 @@ export default function ZProfile() {
         </div>
       </div>
 
-      <div style={{display:'grid', gridTemplateColumns:'repeat(12, 1fr)', gap:0, fontSize:11, color:C.muted, marginBottom:4}}>
+      <div className="zprofile-axis" style={{display:'grid', gridTemplateColumns:'repeat(12, 1fr)', gap:0, fontSize:11, color:C.muted, marginBottom:4}}>
         <div style={{gridColumn:'1 / 4'}}>Variable</div>
         <div style={{gridColumn:'4 / 11', display:'flex', justifyContent:'space-between', padding:'0 8px'}}>
           {[-100,-50,0,50,100].map(t=>(
@@ -44,12 +44,12 @@ export default function ZProfile() {
         const minPct=-110, maxPct=110;
         const toPct = value => ((Math.max(minPct, Math.min(maxPct, value))-minPct)/(maxPct-minPct))*100;
         return (
-          <div key={it.label} style={{display:'grid', gridTemplateColumns:'repeat(12, 1fr)', alignItems:'center', padding:'8px 0', borderBottom: i<items.length-1?`1px solid ${C.paperLine}`:`1px solid ${C.rule}`}}>
-            <div style={{gridColumn:'1 / 4'}}>
+          <div className="zprofile-row" key={it.label} style={{display:'grid', gridTemplateColumns:'repeat(12, 1fr)', alignItems:'center', padding:'8px 0', borderBottom: i<items.length-1?`1px solid ${C.paperLine}`:`1px solid ${C.rule}`}}>
+            <div className="zprofile-var" style={{gridColumn:'1 / 4'}}>
               <div className="serif" style={{fontSize:14, color:C.ink}}>{it.label}</div>
               <div className="mono" style={{fontSize:9.5, color:C.muted}}>{it.unit}</div>
             </div>
-            <div style={{gridColumn:'4 / 11', position:'relative', height:30}}>
+            <div className="zprofile-bar" style={{gridColumn:'4 / 11', position:'relative', height:30}}>
               <div style={{position:'absolute', left:0, right:0, top:'50%', height:1, background:C.paperLine}}/>
               <div style={{
                 position:'absolute', top:'50%', height:14, transform:'translateY(-50%)',
@@ -79,7 +79,7 @@ export default function ZProfile() {
                 background:C.hemip, border:`2px solid ${C.cream}`,
               }}/>
             </div>
-            <div style={{gridColumn:'11 / 13', textAlign:'right'}}>
+            <div className="zprofile-value" style={{gridColumn:'11 / 13', textAlign:'right'}}>
               <span className="mono" style={{fontSize:14, color:C.hemip, fontWeight:500}}>
                 {it.diff_avg>=0?'+':''}{it.diff_avg.toFixed(0)}%
               </span>
@@ -87,7 +87,7 @@ export default function ZProfile() {
           </div>
         );
       })}
-      <div style={{display:'flex', gap:24, marginTop:14, fontSize:11, color:C.muted}}>
+      <div className="zprofile-legend" style={{display:'flex', gap:24, marginTop:14, fontSize:11, color:C.muted}}>
         <span style={{display:'inline-flex', alignItems:'center', gap:6}}>
           <span style={{width:14, height:2, background:C.healthy}}/> Promedio control
         </span>

@@ -29,7 +29,7 @@ export default function Headline() {
 
   return (
     <section style={{padding:'48px 56px 40px', borderBottom:`1px solid ${C.rule}`}}>
-      <div style={{display:'grid', gridTemplateColumns:'280px 1fr', gap:48, alignItems:'flex-start'}}>
+      <div className="headline-layout" style={{display:'grid', gridTemplateColumns:'280px 1fr', gap:48, alignItems:'flex-start'}}>
         <div>
           <div className="label">Hallazgo principal</div>
           <h2 className="serif" style={{fontSize:30, margin:'10px 0 14px', lineHeight:1.15, fontWeight:400, letterSpacing:'-0.015em'}}>
@@ -42,7 +42,7 @@ export default function Headline() {
             El ensayo derecho (20.21 s) la clasifica como <em>semi-independiente</em>; supera además
             el umbral clínico de 13.5 s asociado a riesgo aumentado de caídas en adultos.
           </p>
-          <div style={{marginTop:18, display:'flex', gap:18}}>
+          <div className="headline-stats" style={{marginTop:18, display:'flex', gap:18}}>
             <div>
               <div className="label" style={{fontSize:9.5}}>Promedio control</div>
               <div className="mono" style={{fontSize:22, color:C.healthy, fontWeight:500}}>10.86 s</div>
@@ -57,8 +57,8 @@ export default function Headline() {
             </div>
           </div>
         </div>
-        <div style={{height:280}}>
-          <ResponsiveContainer width="100%" height="100%">
+        <div className="headline-chart" style={{height:280}}>
+          <ResponsiveContainer width="100%" height="100%" minWidth={240} minHeight={260}>
             <BarChart data={data} margin={{top:10, right:20, bottom:30, left:0}} barCategoryGap="22%">
               <CartesianGrid stroke={C.paperLine} strokeDasharray="2 4" vertical={false}/>
               <XAxis dataKey="name" tick={{fill:C.ink2, fontSize:10.5, fontFamily:'JetBrains Mono'}}

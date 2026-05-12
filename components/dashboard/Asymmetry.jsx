@@ -48,7 +48,7 @@ export default function Asymmetry() {
 
   return (
     <section style={{padding:'42px 56px 48px', borderBottom:`1px solid ${C.rule}`}}>
-      <div style={{display:'grid', gridTemplateColumns:'320px 1fr', gap:48, alignItems:'start'}}>
+      <div className="asymmetry-layout" style={{display:'grid', gridTemplateColumns:'320px 1fr', gap:48, alignItems:'start'}}>
         <div>
           <div className="label">03 · Diferencia derecha/izquierda</div>
           <h2 className="serif" style={{fontSize:28, margin:'10px 0 12px', fontWeight:400, letterSpacing:'-0.01em'}}>
@@ -68,13 +68,13 @@ export default function Asymmetry() {
           </div>
         </div>
 
-        <div style={{display:'grid', gridTemplateColumns:'repeat(3, minmax(0, 1fr))', gap:14}}>
+        <div className="asymmetry-cards" style={{display:'grid', gridTemplateColumns:'repeat(3, minmax(0, 1fr))', gap:14}}>
           {FIELDS.map(field => {
             const sofiaValue = sofia.values[field.key];
             const controlValue = control.values[field.key];
             const scale = Math.max(60, sofiaValue, controlValue);
             return (
-              <div key={field.key} style={{
+              <div className="asymmetry-card" key={field.key} style={{
                 background: C.cream,
                 border: `1px solid ${C.rule}`,
                 padding: '16px 18px 15px',

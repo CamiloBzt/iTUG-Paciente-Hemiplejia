@@ -18,17 +18,19 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin:0; padding:0; }
-body { background: var(--itug-cream); }
+body { background: var(--itug-cream); overflow-x: hidden; }
 .itug-root {
   font-family: 'IBM Plex Sans', -apple-system, sans-serif;
   color: var(--itug-ink);
   background: var(--itug-cream);
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
-.itug-root, .itug-root * { font-variant-numeric: tabular-nums; }
+.itug-root, .itug-root * { font-variant-numeric: tabular-nums; min-width: 0; }
 .serif { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; font-variation-settings: "opsz" 144; }
-.mono  { font-family: 'JetBrains Mono', monospace; }
+.mono  { font-family: 'JetBrains Mono', monospace; overflow-wrap: anywhere; }
 .rule  { border-top: 1px solid var(--itug-rule); }
 .hairline { border-top: 1px solid var(--itug-paper-line); }
 .recharts-default-tooltip { background: var(--itug-ink) !important; border: none !important; border-radius: 2px !important; }
@@ -49,4 +51,163 @@ body { background: var(--itug-cream); }
 @media (max-width: 900px) {
   .itug-root section,
   .itug-root header { padding-left: 24px !important; padding-right: 24px !important; }
+}
+
+@media (max-width: 720px) {
+  .itug-root section,
+  .itug-root header {
+    padding: 30px 20px !important;
+  }
+
+  .label {
+    font-size: 9.5px;
+    line-height: 1.35;
+  }
+
+  .small {
+    font-size: 12.5px;
+  }
+
+  .num-xl {
+    font-size: 42px !important;
+  }
+
+  .num-lg {
+    font-size: 28px !important;
+  }
+
+  .masthead-layout,
+  .headline-layout,
+  .asymmetry-layout,
+  .feature-layout {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .masthead-title {
+    font-size: clamp(42px, 13vw, 58px) !important;
+    line-height: 1.02 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .masthead-stats {
+    text-align: left !important;
+    min-width: 0 !important;
+    border-top: 1px solid var(--itug-rule);
+    padding-top: 18px;
+  }
+
+  .cohort-grid,
+  .findings-grid,
+  .treatment-grid,
+  .asymmetry-cards {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .cohort-card-metrics {
+    align-items: flex-start !important;
+    gap: 14px !important;
+    flex-direction: column !important;
+  }
+
+  .cohort-grid > div,
+  .findings-grid > div,
+  .treatment-grid > div {
+    padding: 18px !important;
+  }
+
+  .headline-stats {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .headline-chart {
+    height: 320px !important;
+    min-width: 0 !important;
+  }
+
+  .zprofile-axis {
+    display: none !important;
+  }
+
+  .zprofile-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    padding: 14px 0 !important;
+  }
+
+  .zprofile-var,
+  .zprofile-bar,
+  .zprofile-value {
+    grid-column: auto !important;
+  }
+
+  .zprofile-bar {
+    height: 34px !important;
+  }
+
+  .zprofile-value {
+    text-align: left !important;
+  }
+
+  .zprofile-legend {
+    flex-wrap: wrap !important;
+    gap: 10px 16px !important;
+  }
+
+  .asymmetry-card {
+    min-height: auto !important;
+  }
+
+  .feature-chart {
+    height: 390px !important;
+    min-width: 0 !important;
+  }
+
+  .feature-summary {
+    gap: 8px !important;
+  }
+
+  .feature-summary > div {
+    display: grid !important;
+    gap: 4px !important;
+    align-items: start !important;
+  }
+
+  .findings-title {
+    font-size: clamp(34px, 10vw, 46px) !important;
+  }
+
+  .footer-row {
+    display: grid !important;
+    gap: 8px !important;
+    justify-content: start !important;
+  }
+
+  .recharts-cartesian-axis-tick-value,
+  .recharts-label {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .itug-root section,
+  .itug-root header {
+    padding: 28px 16px !important;
+  }
+
+  .masthead-title {
+    font-size: clamp(38px, 12vw, 48px) !important;
+  }
+
+  .headline-chart {
+    height: 300px !important;
+  }
+
+  .feature-chart {
+    height: 360px !important;
+  }
 }

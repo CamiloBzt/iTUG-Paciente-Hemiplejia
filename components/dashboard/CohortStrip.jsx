@@ -30,7 +30,7 @@ export default function CohortStrip() {
 
   return (
     <section style={{padding:'28px 56px 36px', borderBottom:`1px solid ${C.rule}`}}>
-      <div style={{display:'grid', gridTemplateColumns:'repeat(2, minmax(0, 1fr))', gap:1, background:C.rule, border:`1px solid ${C.rule}`}}>
+      <div className="cohort-grid" style={{display:'grid', gridTemplateColumns:'repeat(2, minmax(0, 1fr))', gap:1, background:C.rule, border:`1px solid ${C.rule}`}}>
         {cards.map(card => {
           return (
             <div key={card.key} style={{
@@ -48,7 +48,7 @@ export default function CohortStrip() {
               <div className="small" style={{marginTop:4, fontSize:11.5, color:C.muted}}>
                 {card.meta}
               </div>
-              <div style={{marginTop:12, display:'flex', justifyContent:'space-between', alignItems:'flex-end'}}>
+              <div className="cohort-card-metrics" style={{marginTop:12, display:'flex', justifyContent:'space-between', alignItems:'flex-end'}}>
                 <div>
                   <div className="label" style={{fontSize:9.5}}>TUG promedio</div>
                   <div className="mono" style={{fontSize:18, fontWeight:500, color:card.isPatient?C.hemip:C.healthy, marginTop:2}}>
