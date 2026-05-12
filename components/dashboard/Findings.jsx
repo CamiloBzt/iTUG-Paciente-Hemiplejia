@@ -50,10 +50,6 @@ export default function Findings() {
         </div>
       </div>
 
-      <div className="footer-row" style={{marginTop:36, paddingTop:18, borderTop:`1px solid ${C.rule}`, display:'flex', justifyContent:'space-between', fontSize:11, color:C.muted}}>
-        <span>iTUG Dashboard · prototipo de investigación</span>
-        <span className="mono">Generado · {new Date().toLocaleDateString('es-CO')}</span>
-      </div>
     </section>
   );
 }
