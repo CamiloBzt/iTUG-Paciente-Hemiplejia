@@ -1,0 +1,108 @@
+import { TIMESERIES } from './itug-timeseries';
+
+export const TRIALS = [
+  // ============ SOFÍA SANDOVAL — HEMIPLEJIA ============
+  { id:'sofia_der', subject:'Sofía Sandoval', side:'der', group:'hemiplegia',
+    age:19, sex:'F', weight:63, height:158,
+    total:20.21, mobility:'Semi-independiente',
+    stand_dur:1.40, sit_dur:2.10,
+    stand_ap:4.5, stand_lat:2.1, stand_vert:3.9,
+    sit_ap:1.9, sit_lat:2.2, sit_vert:3.9,
+    mid_dur:2.70, final_dur:3.20,
+    mid_max:130.6, final_max:113.9,
+    mid_avg:62.9, final_avg:58.1,
+    s_flex_peak:48.5, s_ext_peak:23.8, s_flex_range:47.1, s_ext_range:24.8,
+    si_flex_peak:50.7, si_ext_peak:1.8, si_flex_range:10.9, si_ext_range:49.1 },
+  { id:'sofia_izq', subject:'Sofía Sandoval', side:'izq', group:'hemiplegia',
+    age:19, sex:'F', weight:63, height:158,
+    total:17.70, mobility:'Independiente',
+    stand_dur:1.30, sit_dur:2.20,
+    stand_ap:3.8, stand_lat:3.5, stand_vert:2.9,
+    sit_ap:2.9, sit_lat:2.7, sit_vert:4.1,
+    mid_dur:2.90, final_dur:1.90,
+    mid_max:165.0, final_max:148.8,
+    mid_avg:57.2, final_avg:60.5,
+    s_flex_peak:30.3, s_ext_peak:16.4, s_flex_range:29.5, s_ext_range:13.9,
+    si_flex_peak:45.0, si_ext_peak:9.5, si_flex_range:16.7, si_ext_range:54.2 },
+
+  // ============ MARÍA PAULA GÓMEZ — SANA ============
+  { id:'maria_der', subject:'María Paula Gómez', side:'der', group:'healthy',
+    age:21, sex:'F', weight:59, height:162,
+    total:11.37, mobility:'Independiente',
+    stand_dur:1.50, sit_dur:1.30,
+    stand_ap:2.2, stand_lat:0.9, stand_vert:4.3,
+    sit_ap:3.8, sit_lat:3.7, sit_vert:6.1,
+    mid_dur:2.38, final_dur:1.10,
+    mid_max:182.3, final_max:264.8,
+    mid_avg:79.4, final_avg:155.7,
+    s_flex_peak:25.2, s_ext_peak:3.1, s_flex_range:24.3, s_ext_range:22.1,
+    si_flex_peak:32.3, si_ext_peak:0.3, si_flex_range:27.8, si_ext_range:32.0 },
+  { id:'maria_izq', subject:'María Paula Gómez', side:'izq', group:'healthy',
+    age:21, sex:'F', weight:59, height:162,
+    total:12.65, mobility:'Independiente',
+    stand_dur:1.80, sit_dur:1.40,
+    stand_ap:2.7, stand_lat:1.5, stand_vert:3.2,
+    sit_ap:3.5, sit_lat:4.4, sit_vert:5.0,
+    mid_dur:2.71, final_dur:1.51,
+    mid_max:164.3, final_max:244.6,
+    mid_avg:65.8, final_avg:118.7,
+    s_flex_peak:25.5, s_ext_peak:0.2, s_flex_range:25.7, s_ext_range:25.3,
+    si_flex_peak:27.2, si_ext_peak:2.7, si_flex_range:18.6, si_ext_range:29.8 },
+
+  // ============ JULIANA MAYORGA — SANA ============
+  { id:'juliana_der', subject:'Juliana Mayorga', side:'der', group:'healthy',
+    age:20, sex:'F', weight:60, height:170,
+    total:10.08, mobility:'Independiente',
+    stand_dur:1.00, sit_dur:1.70,
+    stand_ap:4.7, stand_lat:1.0, stand_vert:7.3,
+    sit_ap:3.8, sit_lat:3.9, sit_vert:5.4,
+    mid_dur:2.39, final_dur:1.50,
+    mid_max:132.8, final_max:173.9,
+    mid_avg:73.8, final_avg:89.4,
+    s_flex_peak:41.8, s_ext_peak:24.8, s_flex_range:40.6, s_ext_range:17.0,
+    si_flex_peak:42.0, si_ext_peak:6.4, si_flex_range:24.6, si_ext_range:35.5 },
+  { id:'juliana_izq', subject:'Juliana Mayorga', side:'izq', group:'healthy',
+    age:20, sex:'F', weight:60, height:170,
+    total:10.29, mobility:'Independiente',
+    stand_dur:1.20, sit_dur:1.80,
+    stand_ap:5.4, stand_lat:1.8, stand_vert:6.7,
+    sit_ap:4.6, sit_lat:3.4, sit_vert:8.2,
+    mid_dur:2.37, final_dur:1.74,
+    mid_max:157.0, final_max:192.8,
+    mid_avg:76.3, final_avg:101.2,
+    s_flex_peak:42.4, s_ext_peak:10.9, s_flex_range:41.3, s_ext_range:31.5,
+    si_flex_peak:36.5, si_ext_peak:2.8, si_flex_range:25.3, si_ext_range:39.3 },
+
+  // ============ JENNIFER SÁNCHEZ — SANA ============
+  { id:'jenni_der', subject:'Jennifer Sánchez', side:'der', group:'healthy',
+    age:21, sex:'F', weight:53, height:156,
+    total:10.59, mobility:'Independiente',
+    stand_dur:1.26, sit_dur:1.70,
+    stand_ap:3.7, stand_lat:2.9, stand_vert:6.7,
+    sit_ap:3.9, sit_lat:6.4, sit_vert:4.5,
+    mid_dur:2.16, final_dur:1.61,
+    mid_max:151.9, final_max:186.0,
+    mid_avg:82.1, final_avg:110.0,
+    s_flex_peak:38.8, s_ext_peak:7.1, s_flex_range:38.0, s_ext_range:31.7,
+    si_flex_peak:35.6, si_ext_peak:0.3, si_flex_range:26.6, si_ext_range:35.5 },
+  { id:'jenni_izq', subject:'Jennifer Sánchez', side:'izq', group:'healthy',
+    age:21, sex:'F', weight:53, height:156,
+    total:10.17, mobility:'Independiente',
+    stand_dur:1.50, sit_dur:1.20,
+    stand_ap:4.4, stand_lat:3.3, stand_vert:6.8,
+    sit_ap:4.0, sit_lat:4.0, sit_vert:8.6,
+    mid_dur:1.90, final_dur:1.30,
+    mid_max:149.5, final_max:246.1,
+    mid_avg:87.6, final_avg:143.0,
+    s_flex_peak:34.2, s_ext_peak:5.3, s_flex_range:34.1, s_ext_range:29.0,
+    si_flex_peak:36.3, si_ext_peak:4.8, si_flex_range:18.9, si_ext_range:40.8 },
+];
+
+// Attach jerk_rms from time-series module
+TRIALS.forEach(t => {
+  const key = `${t.subject}__${t.side}`;
+  const ts = TIMESERIES[key];
+  // approximate from gyro_mag std as movement variability if no jerk
+  t.gyro_std = ts?.gyro_mag_stats?.std ?? 0;
+  t.acc_std = ts?.acc_mag_stats?.std ?? 0;
+});
